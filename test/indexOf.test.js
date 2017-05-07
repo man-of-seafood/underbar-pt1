@@ -20,10 +20,12 @@ describe('indexOf()', () => {
     const arr = ['foo', 'bar', 'baz', 'bar', 'bar'];
     expect(_.indexOf(arr, 'bar')).toBe(1);
   });
-
   it('starts searching at the given offset', () => {
     const arr = ['foo', 'bar', 'baz', 'bar', 'bar'];
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
-
+  it('compares using \'===\' rather than \'==\'', () => {
+    const arr = ['1', '2', '3'];
+    expect(_.indexOf(arr, 2)).toBe(-1);
+  });
 });
