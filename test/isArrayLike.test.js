@@ -18,4 +18,16 @@ describe('isArrayLike()', () => {
     };
     expect(_.isArrayLike(nonArrayLikeObj)).toBe(false);
   });
+  it('returns false if the length key does correspond to a numerical value', () => {
+    const sneakyArrayLikeObj = {
+      length: '10'
+    };
+    expect(_.isArrayLike(sneakyArrayLikeObj)).toBe(false);
+  });
+  it('returns false if the length is negative', () => {
+    const sneakyArrayLikeObj = {
+      length: -3
+    };
+    expect(_.isArrayLike(sneakyArrayLikeObj)).toBe(false);
+  });
 });
