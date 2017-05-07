@@ -12,4 +12,12 @@ describe('last()', () => {
   it('returns the whole array if you ask for more elements than it has', () => {
     expect(_.last(['a', 'b', 'c'], 5)).toEqual(['a', 'b', 'c']);
   });
+  it('returns the whole array if asked for last n === length', () => {
+    expect(_.last(['a', 'b', 'c'], 3)).toEqual(['a', 'b', 'c']);
+  })
+  it('does not modify the original array', () => {
+    const letters = ['a', 'b', 'c'];
+    const lastTwo = _.last(letters, 2);
+    expect(letters).toEqual(['a', 'b', 'c']);
+  });
 });
