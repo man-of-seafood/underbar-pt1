@@ -23,4 +23,8 @@ describe('filter()', () => {
     const abilityScores = _.filter(characterAttributes, (value) => !isNaN(value));
     expect(abilityScores).toEqual([4, 7, 10, 16, 5, 4]);
   });
+  it('filters a word list for words of length 4', () => {
+    const words = ['hi', 'hello', 'mark', 'puts', 'stop']; 
+    expect(_.filter(words, word => word.length === 4)).toEqual(['mark', 'puts', 'stop']);
+  });
 });
