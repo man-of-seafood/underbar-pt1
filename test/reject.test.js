@@ -18,4 +18,8 @@ describe('reject()', () => {
     const orderItems = _.reject(order, (value) => value === null);
     expect(orderItems).toEqual(['burger', 'ketchup', 'cookie']);
   });
+  it('rejects non-numeric values from a list', () => {
+    const random = [1, 'asd;flkj', 4, {bleh: 2}];
+    expect(_.reject(random, item => isNaN(item))).toEqual([1, 4]);
+  });
 });
