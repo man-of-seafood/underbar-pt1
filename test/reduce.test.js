@@ -12,7 +12,7 @@ describe('reduce()', () => {
     const result = _.reduce(nums, (a, b) => a + b);
     expect(result).toEqual(15);
   });
-  it('finds the maximum age out of an array of age values', () => {
+  it('reduces an array of numbers to a max, without an explicit init value', () => {
     const people = [
       { name: 'Harriet', age: 12},
       { name: 'Lazarus', age: 999},
