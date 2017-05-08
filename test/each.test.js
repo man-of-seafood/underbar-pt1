@@ -39,5 +39,10 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
+  it('it uses the identity function by default, not causing any side effects', () => {
+    const arr = [1,2,3];
+    _.each(arr);
+    expect(arr).toEqual([1,2,3]);
+  });
 });
 
